@@ -1,0 +1,58 @@
+{
+  "gigs": [
+    {
+      "id": "g1",
+      "title": "Professional Logo Design – Fast Turnaround",
+      "description": "Offering modern, high-quality logo design services tailored to your brand. Includes 3 concepts, unlimited revisions, and final assets in all formats.",
+      "contact": "designs@freelancerhub.com",
+      "author": "ArjunDesigner",
+      "type": "offering",
+      "timestamp": "2024-07-12T09:30:00Z"
+    },
+    {
+      "id": "g2",
+      "title": "Looking for JavaScript Debugging Help",
+      "description": "I'm stuck on a weird bug in my React app. Need someone to pair program or help fix it. Should be familiar with hooks and state management.",
+      "contact": "@CodeWithMe_123 (Telegram)",
+      "author": "NehaCode",
+      "type": "seeking",
+      "timestamp": "2024-07-13T14:15:00Z"
+    },
+    {
+      "id": "g3",
+      "title": "Offering Resume Writing Services",
+      "description": "I’ll help revamp your resume for tech roles (developer, PM, UX, etc.). Fast delivery, tailored content, and LinkedIn optimization available too.",
+      "contact": "resumepro@careerboost.in",
+      "author": "CareerCraft",
+      "type": "offering",
+      "timestamp": "2024-07-10T08:20:00Z"
+    },
+    {
+      "id": "g4",
+      "title": "Need Help Setting Up Firebase Auth",
+      "description": "Trying to set up login/signup with Google Auth using Firebase for a project. If you've done this before, would love to learn from you!",
+      "contact": "anirudh.projects@gmail.com",
+      "author": "AniJS",
+      "type": "seeking",
+      "timestamp": "2024-07-11T18:00:00Z"
+    },
+    {
+      "id": "g5",
+      "title": "3D Animation for Short Film",
+      "description": "Looking for someone to create short 3D sequences for a student project. Experience with Blender or Maya preferred. Paid gig.",
+      "contact": "vikas.studio@artmail.com",
+      "author": "VikasFilmLab",
+      "type": "seeking",
+      "timestamp": "2024-07-14T12:00:00Z"
+    },
+    {
+      "id": "g6",
+      "title": "Video Editing Services – YouTube, Reels, Shorts",
+      "description": "I offer clean, trendy, and engaging video edits. Ideal for content creators looking to elevate their production value. Fast delivery & revisions included.",
+      "contact": "editking@shortform.io",
+      "author": "EditKing",
+      "type": "offering",
+      "timestamp": "2024-07-13T16:45:00Z"
+    }
+  ]
+}

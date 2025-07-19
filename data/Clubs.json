@@ -1,0 +1,67 @@
+[
+  {
+    "category": "Technology",
+    "clubs": [
+      {
+        "name": "Tech Innovators Club",
+        "description": "Fuel your passion for cutting-edge tech in the Tech Innovators Club! Explore emerging trends, brainstorm breakthrough ideas, and collaborate with peers on exciting projects. Whether you're into AI, blockchain, or just love solving problems, this is your space to learn, grow, and shape the future—together.",
+        "contact": "tech.innovators@yourcompany.org"
+      }
+    ]
+  },
+  {
+    "category": "Arts & Culture",
+    "clubs": [
+      {
+        "name": "Debate Society",
+        "description": "Engage, challenge, and inspire through structured dialogue in the Debate Society. From global issues to cultural trends, sharpen your public speaking and critical thinking in a friendly, intellectually curious environment. A great place to voice ideas and connect with eloquent minds.",
+        "contact": "debate.society@yourcompany.org"
+      }
+    ]
+  },
+  {
+    "category": "Business",
+    "clubs": [
+      {
+        "name": "Entrepreneurs' Hub",
+        "description": "Step into the Entrepreneurs' Hub—where ideas turn into action. Connect with ambitious colleagues, exchange strategies, and explore startup culture in a vibrant space built for innovation and growth. Perfect for aspiring founders or anyone with a business spark.",
+        "contact": "e-hub@yourcompany.org"
+      }
+    ]
+  },
+  {
+    "category": "Social Cause",
+    "clubs": [
+      {
+        "name": "Green Earth Initiative",
+        "description": "Join the Green Earth Initiative and make sustainability more than just a buzzword. Whether you're passionate about climate change, conservation, or eco-living, our mission is to create real, positive impact—starting right here at work.",
+        "contact": "green.earth@yourcompany.org"
+      }
+    ]
+  },
+  {
+    "category": "Hobbies",
+    "clubs": [
+      {
+        "name": "Photography Club",
+        "description": "Capture moments, share stories, and see the world through new perspectives in the Photography Club. Whether you're using a DSLR or a phone camera, this is your place to learn, experiment, and connect with fellow creatives.",
+        "contact": "photo.club@yourcompany.org"
+      }
+    ]
+  },
+  {
+    "category": "Research & Development",
+    "clubs": [
+      {
+        "name": "AI & Robotics CoE",
+        "description": "Welcome to the AI & Robotics Center of Excellence—a collaborative space for forward-thinkers shaping tomorrow’s intelligent systems. Dive into hands-on projects, share expertise, and explore technologies driving automation and innovation across industries.",
+        "contact": "coe.ai@yourcompany.org"
+      },
+      {
+        "name": "Quantum Computing Research Group",
+        "description": "Explore the next frontier of computing with the Quantum Computing Research Group. Decode quantum principles, simulate new algorithms, and envision real-world applications in this cutting-edge Center of Excellence. All curious minds welcome!",
+        "contact": "coe.quantum@yourcompany.org"
+      }
+    ]
+  }
+]

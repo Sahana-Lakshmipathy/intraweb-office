@@ -1,0 +1,29 @@
+[
+  {
+    "id": "forum1",
+    "title": "SaaS Development Trends 2025",
+    "author": "Admin",
+    "numberOfUsers": 34,
+    "numberOfThreads": 12,
+    "status": "Active",
+    "replies": []
+  },
+  {
+    "id": "forum2",
+    "title": "Work-Life Balance Advice",
+    "author": "Mentor123",
+    "numberOfUsers": 58,
+    "numberOfThreads": 25,
+    "status": "Active",
+    "replies": []
+  },
+  {
+    "id": "forum3",
+    "title": "Google I/O 2025 Highlights",
+    "author": "ModeratorX",
+    "numberOfUsers": 22,
+    "numberOfThreads": 8,
+    "status": "Inactive",
+    "replies": []
+  }
+]

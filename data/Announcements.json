@@ -1,0 +1,77 @@
+{
+  "announcements": [
+    {
+      "title": "Q3 Marketing Campaign Deadline Reminder",
+      "postedBy": "Marketing Department",
+      "datePosted": "2024-07-15",
+      "content": "A friendly reminder that all creative assets and final copy for the Q3 Marketing Campaign are due by EOD Friday, July 19th. Please ensure all contributions are submitted to the shared drive.",
+      "id": "announcement-1",
+      "priority": "high",
+      "pinned": true
+    },
+    {
+      "title": "New Coffee Machine in Kitchenette",
+      "postedBy": "Facilities Management",
+      "datePosted": "2024-07-10",
+      "content": "We are excited to announce the installation of a new, state-of-the-art coffee machine in the main kitchenette on the 3rd floor. Enjoy a wider selection of beverages! Please remember to keep the area tidy.",
+      "id": "announcement-2",
+      "priority": "medium",
+      "pinned": false
+    },
+    {
+      "title": "Congratulations to Our Employee of the Month: Sarah Chen!",
+      "postedBy": "Human Resources",
+      "datePosted": "2024-07-08",
+      "content": "We are thrilled to announce Sarah Chen from the Product Development team as our Employee of the Month for July. Sarah's dedication and outstanding contributions to the \"Phoenix\" project have been truly exceptional. Join us in congratulating her!",
+      "id": "announcement-3",
+      "priority": "low",
+      "pinned": false
+    },
+    {
+      "title": "Reminder: Updated Remote Work Policy Guidelines",
+      "postedBy": "Human Resources",
+      "datePosted": "2024-07-05",
+      "content": "As we continue to embrace flexible work arrangements, please review the updated Remote Work Policy Guidelines available on the HR portal. Key changes include revised scheduling procedures and communication protocols.",
+      "id": "announcement-4",
+      "priority": "medium",
+      "pinned": false
+    },
+    {
+      "title": "Scheduled IT System Maintenance - July 20th",
+      "postedBy": "IT Department",
+      "datePosted": "2024-07-01",
+      "content": "Please be advised that essential IT system maintenance will be conducted on Saturday, July 20th, from 8:00 AM to 12:00 PM. During this period, there may be intermittent disruptions to network services and internal applications. Thank you for your understanding.",
+      "id": "announcement-5",
+      "priority": "high",
+      "pinned": false
+    },
+    {
+      "title": "Office Wellness Challenge: \"Step Up for Health!\"",
+      "postedBy": "Wellness Committee",
+      "datePosted": "2024-06-28",
+      "content": "Get ready to get active! Our \"Step Up for Health!\" wellness challenge begins on August 1st. Form teams and track your daily steps for a chance to win exciting prizes. Sign-up details will be circulated next week.",
+      "id": "announcement-6",
+      "priority": "medium",
+      "pinned": false
+    },
+    {
+      "title": "Conference Room A/V Upgrade Completed",
+      "postedBy": "Facilities Management",
+      "datePosted": "2024-06-25",
+      "content": "We are pleased to announce that the audio-visual systems in Conference Room 301 and 302 have been fully upgraded. New projectors and enhanced conferencing tools are now available for improved meeting experiences. Training sessions will be scheduled soon.",
+      "id": "announcement-7",
+      "priority": "low",
+      "pinned": false
+    },
+    {
+      "title": "Kick-off: \"Project Evergreen\" Initiative",
+      "postedBy": "Project Management Office (PMO)",
+      "datePosted": "2024-06-20",
+      "content": "We are excited to announce the official kick-off of \"Project Evergreen,\" our new sustainability initiative aimed at reducing our carbon footprint. An introductory meeting for all interested employees will be held on July 25th in Conference Room 303.",
+      "id": "announcement-8",
+      "priority": "medium",
+      "pinned": false
+    }
+  ]
+}
+

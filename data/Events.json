@@ -1,0 +1,69 @@
+
+{
+  "events": [
+    {
+      "committee": "Tech Innovators Club",
+      "title": "AI Essentials: Mastering Prompt Engineering",
+      "description": "Unlock the full potential of AI tools by learning the art of effective prompt engineering. This interactive workshop will equip you with the skills to generate precise and creative outputs from AI models, revolutionizing your daily tasks. Join us to transform your AI interactions from basic queries to powerful commands.",
+      "location": "Innovation Lab",
+      "datetime": "2024-10-15T14:00:00",
+      "image": "../assets/AI.jpg"
+    },
+    {
+      "committee": "Diversity & Inclusion Committee",
+      "title": "Global Diversity Fest: A Culinary & Cultural Exchange",
+      "description": "Celebrate the rich tapestry of cultures within our organization at our Global Diversity Fest! Enjoy a potluck featuring dishes from around the world, experience traditional music, and share fascinating insights about your heritage. It's a fantastic opportunity to connect with colleagues and broaden your global perspective.",
+      "location": "Main Cafeteria & Courtyard",
+      "datetime": "2024-11-08T12:00:00",
+      "image": "../assets/culinary.jpg"
+    },
+    {
+      "committee": "Wellness & Sports Committee",
+      "title": "Annual Company Fun Run & Walk",
+      "description": "Lace up your sneakers for our Annual Company Fun Run & Walk! Whether you're a seasoned runner or prefer a leisurely stroll, this event is perfect for all fitness levels. Enjoy the fresh air, boost your well-being, and connect with colleagues outside the office while supporting a healthy lifestyle.",
+      "location": "Local Park - East Meadow Trail",
+      "datetime": "2024-09-28T09:00:00",
+      "image": "../assets/running.jpg"
+    },
+    {
+      "committee": "Organizational Development",
+      "title": "The Future of Work: Adapting to Agile Methodologies",
+      "description": "Explore how agile methodologies are reshaping modern workplaces and empowering teams to be more responsive and efficient. This seminar will cover key agile principles, their benefits, and practical steps for integrating them into your projects. Discover how to foster a culture of adaptability and continuous improvement.",
+      "location": "Auditorium",
+      "datetime": "2024-10-22T10:30:00",
+      "image": "../assets/agile.jpg"
+    },
+    {
+      "committee": "Innovation & Strategy Team",
+      "title": "Design Thinking Basics: Problem-Solving for Everyone",
+      "description": "Unleash your creative problem-solving potential with our Design Thinking Basics workshop. Learn a human-centered approach to innovation, from empathizing with users to rapid prototyping solutions. This hands-on session will equip you with tools to tackle complex challenges in any department.",
+      "location": "Collaboration Hub - Room 3A",
+      "datetime": "2024-11-19T13:00:00",
+      "image": "../assets/design.jpg"
+    },
+    {
+      "committee": "Employee Engagement Committee",
+      "title": "Team Trivia Challenge: Brains & Bytes",
+      "description": "Gather your smartest colleagues for the ultimate Team Trivia Challenge! Test your knowledge across a variety of fun categories, from pop culture to company history. It's a fantastic opportunity to unwind, laugh, and foster team spirit in a friendly competitive atmosphere.",
+      "location": "Recreation Lounge",
+      "datetime": "2024-12-05T16:30:00",
+      "image": "../assets/quiz.jpg"
+    },
+    {
+      "committee": "HR & Wellness Programs",
+      "title": "Mindfulness for Productivity: Enhancing Focus & Well-being",
+      "description": "Discover practical mindfulness techniques to reduce stress, improve focus, and boost your overall well-being. This interactive online seminar will provide actionable strategies for integrating mindfulness into your daily routine. Learn how to cultivate a calmer and more productive work life.",
+      "location": "Online via Zoom",
+      "datetime": "2024-09-20T11:00:00",
+      "image": "../assets/mindfulness.jpg"
+    },
+    {
+      "committee": "Data Science Guild",
+      "title": "Lunch & Learn: Introduction to Data Visualization",
+      "description": "Transform raw data into compelling insights with our 'Introduction to Data Visualization' Lunch & Learn session. Learn the fundamentals of effective visual communication using common tools and techniques. Bring your lunch and your curiosity for an enlightening session.",
+      "location": "Training Room B",
+      "datetime": "2024-10-03T12:30:00",
+      "image": "../assets/data.jpg"
+    }
+  ]
+}
