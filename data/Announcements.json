@@ -70,8 +70,9 @@
       "content": "We are excited to announce the official kick-off of \"Project Evergreen,\" our new sustainability initiative aimed at reducing our carbon footprint. An introductory meeting for all interested employees will be held on July 25th in Conference Room 303.",
       "id": "announcement-8",
       "priority": "medium",
-      "pinned": false
+      "pinned": true
     }
   ]
 }
+
 
