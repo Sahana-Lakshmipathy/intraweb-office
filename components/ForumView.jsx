@@ -183,7 +183,7 @@ const ForumView = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const response = await fetch('/data/forums.json');
+        const response = await fetch('/data/Forums.json');
         const data = await response.json();
         setForums(data);
         loadTopics();
