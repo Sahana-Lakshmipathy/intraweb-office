@@ -5,7 +5,7 @@ import Spinner from './Spinner';
 import TopicDetailView from './TopicDetailView';
 import {Plus,Search,User,MessagesSquare,CheckCircle,Clock,TrendingUp,MessageCircle,Eye,ChevronRight
 } from 'lucide-react';
-import forumData from '../data/Forums.json';
+import forumData from '../public/data/Forums.json';
 
 
 const CreateTopicForm = ({ onTopicCreated, isOpen, onToggle }) => {

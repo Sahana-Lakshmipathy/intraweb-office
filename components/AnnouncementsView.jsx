@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Megaphone, Pin, Clock, User } from 'lucide-react';
-import announcementsJson from '../data/Announcements.json';
+import announcementsJson from '../public/data/Announcements.json';
 import Spinner from './Spinner';
 import Card from './Card';
 

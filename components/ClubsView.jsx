@@ -1,7 +1,7 @@
 // ClubsView.jsx
 import React from 'react';
 import Card from './Card';
-import clubdata from '../data/Clubs.json'; // Assuming default export
+import clubdata from '../public/data/Clubs.json'; // Assuming default export
 
 const categoryColors = {
   'Technology': 'text-blue-500 dark:text-blue-400',

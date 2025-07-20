@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, MapPin, Users, Filter, Search } from 'lucide-react';
-import eventJson from '../data/Events.json';
+import eventJson from '../public/data/Events.json';
 import Spinner from './Spinner';
 import Modal from './Modal';
 
