@@ -4,6 +4,9 @@ import { STATIC_CLUBS } from '../constants'; // Ensure this path is correct
 import { goalService } from '../services/goalService'; // Ensure this path is correct
 // Removed: import { type Goal, type GoalStatus } from '../types'; // Type imports are not needed in JSX
 
+const uniqueCategories = [...new Set(STATIC_CLUBS.map(club => club.category))];
+
+
 const OfficeGoalsView = () => { // Removed : React.FC
   const coeList = useMemo(() => STATIC_CLUBS.filter(c => c.category === 'Technology'), []);
   const [selectedCoe, setSelectedCoe] = useState(coeList[0]?.name || ''); // Removed <string>
@@ -46,11 +49,19 @@ const OfficeGoalsView = () => { // Removed : React.FC
     <div className="space-y-8">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">CoE Goals</h1>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Office Goals</h1>
           <p className="text-gray-600 dark:text-gray-400">Track and manage strategic goals by Center of Excellence</p>
         </div>
         <div className="w-full sm:w-auto">
-          {/* There was an empty div here in your original code, left as is */}
+          <select 
+          value={selectedCoe} 
+          onChange={(e) => setSelectedCoe(e.target.value)}
+          className="w-full sm:w-auto px-4 py-2 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            {uniqueCategories.map(category => (
+              <option key={category} value={category}>{category}</option>
+            ))}
+          </select>
         </div>
       </div>
 
@@ -117,7 +128,7 @@ const OfficeGoalsView = () => { // Removed : React.FC
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{goal.description}</h3>
                   <select
                     value={goal.status}
-                    onChange={(e) => handleStatusChange(goal.id, e.target.value)} 
+                    onChange={(e) => handleStatusChange(goal.id, e.target.value)}
                     className={`px-2 py-1 text-xs font-medium rounded-lg ${getStatusColor(goal.status)}`}
                   >
                     <option value="Not Started">Not Started</option>
