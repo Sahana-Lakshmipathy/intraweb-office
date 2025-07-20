@@ -9,7 +9,7 @@ const GigForm = ({ onGigAdded }) => {
   const [description, setDescription] = useState('');
   const [contact, setContact] = useState('');
   const [type, setType] = useState('seeking');
-  const [author, setAuthor] = useState('AnonymousStudent');
+  const [author, setAuthor] = useState('AuthorName'); 
 
   const handleSubmit = (e) => {
     e.preventDefault();

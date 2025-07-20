@@ -185,7 +185,6 @@ const ForumView = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        
         setForums(forumData);
         loadTopics();
         setIsLoading(false);
