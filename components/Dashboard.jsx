@@ -207,12 +207,12 @@ const Dashboard = ({ setCurrentView }) => {
 
       <Section id="freelance" title="Side Hustles" subtitle="Freelance gigs, research assistantships, and part-time jobs in our internal marketplace" icon={<Briefcase size={32} className="text-purple-400" />} className="bg-gray-900">
         {isLoading ? <div className="stagger-child"><Spinner /></div> : <div className="grid md:grid-cols-3 gap-8 mb-12">{gigs.map((gig) => (<Card key={gig.id} className="text-gray-800 dark:text-gray-200 p-6 stagger-child hover:scale-105 transition-all duration-300 group"><div className="relative overflow-hidden"><div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full -translate-y-8 translate-x-8 group-hover:scale-150 transition-transform" /><div className="relative z-10"><div className="flex items-center gap-2 mb-3"><span className={`text-xs font-semibold px-3 py-1 rounded-full ${gig.type === 'offering' ? 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300' : 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-300'}`}>{gig.type === 'offering' ? 'Offering Skill' : 'Seeking Help'}</span></div><h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600">{gig.title}</h3><p className="text-sm text-gray-500 dark:text-gray-400">By {gig.author}</p></div></div></Card>))}</div>}
-        <div className="text-center stagger-child"><CtaButton onClick={() => alert('Navigating to Freelance board...')}>Explore Opportunity Board</CtaButton></div>
+        <div className="text-center stagger-child"><CtaButton onClick={() => setCurrentView('freelance')}>Explore Opportunity Board</CtaButton></div>
       </Section>
 
       <Section id="polls" title="Office Pulse" subtitle="Your voice matters - participate in polls that shape our campus culture and decision-making" icon={<MessageSquare size={32} className="text-orange-400" />} backgroundPattern="dots" className="bg-gray-900/95 backdrop-blur-sm">
         <div className="max-w-2xl mx-auto w-full stagger-child"><WeeklyPoll /></div>
-        <div className="text-center mt-12 stagger-child"><CtaButton onClick={() => alert('Navigating to Poll history...')}>View Poll History</CtaButton></div>
+        <div className="text-center mt-12 stagger-child"><CtaButton onClick={() =>setCurrentView('poll-history')}>View Poll History</CtaButton></div>
       </Section>
 
       <Section
@@ -246,7 +246,7 @@ const Dashboard = ({ setCurrentView }) => {
   </div>
 
   <div className="text-center stagger-child">
-    <CtaButton onClick={() => alert('Navigating to Directory...')}>Open Full Directory</CtaButton>
+    <CtaButton onClick={() => setCurrentView('directory')}>Open Full Directory</CtaButton>
   </div>
 </Section>
     </div>
