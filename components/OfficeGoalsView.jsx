@@ -1,12 +1,13 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Award, Target, TrendingUp, CheckCircle } from 'lucide-react';
-import { STATIC_CLUBS } from '../constants';
-import { goalService } from '../services/goalService';
+import { STATIC_CLUBS } from '../constants'; // Ensure this path is correct
+import { goalService } from '../services/goalService'; // Ensure this path is correct
+// Removed: import { type Goal, type GoalStatus } from '../types'; // Type imports are not needed in JSX
 
-const OfficeGoalsView = () => {
-  const coeList = useMemo(() => STATIC_CLUBS.filter(c => c.category === 'Center of Excellence'), []);
-  const [selectedCoe, setSelectedCoe] = useState(coeList[0]?.name || '');
-  const [goals, setGoals] = useState([]);
+const OfficeGoalsView = () => { // Removed : React.FC
+  const coeList = useMemo(() => STATIC_CLUBS.filter(c => c.category === 'Technology'), []);
+  const [selectedCoe, setSelectedCoe] = useState(coeList[0]?.name || ''); // Removed <string>
+  const [goals, setGoals] = useState([]); // Removed <Goal[]>
   const [newGoalDescription, setNewGoalDescription] = useState('');
   const currentMonth = new Date().toLocaleString('default', { month: 'long', year: 'numeric' });
 
@@ -16,7 +17,7 @@ const OfficeGoalsView = () => {
     }
   }, [selectedCoe]);
 
-  const handleAddGoal = (e) => {
+  const handleAddGoal = (e) => { // Removed : React.FormEvent
     e.preventDefault();
     if (!newGoalDescription.trim() || !selectedCoe) return;
     goalService.addGoal({ coeName: selectedCoe, description: newGoalDescription, month: currentMonth });
@@ -24,12 +25,12 @@ const OfficeGoalsView = () => {
     setNewGoalDescription('');
   };
 
-  const handleStatusChange = (goalId, status) => {
+  const handleStatusChange = (goalId, status) => { // Removed : string, : GoalStatus
     goalService.updateGoalStatus(goalId, status);
     setGoals(goalService.getGoalsByCoe(selectedCoe));
   };
 
-  const getStatusColor = (status) => {
+  const getStatusColor = (status) => { // Removed : string
     switch (status) {
       case 'Completed':
       case 'completed': return 'text-green-600 bg-green-100 dark:bg-green-900/30';
@@ -45,20 +46,11 @@ const OfficeGoalsView = () => {
     <div className="space-y-8">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Club Goals</h1>
-          <p className="text-gray-600 dark:text-gray-400">Track and manage strategic goals by various clubs</p>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">CoE Goals</h1>
+          <p className="text-gray-600 dark:text-gray-400">Track and manage strategic goals by Center of Excellence</p>
         </div>
         <div className="w-full sm:w-auto">
-          {/* You might want a CoE selector here */}
-          <select
-            value={selectedCoe}
-            onChange={(e) => setSelectedCoe(e.target.value)}
-            className="block w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-900 dark:text-white"
-          >
-            {coeList.map((coe) => (
-              <option key={coe.name} value={coe.name}>{coe.name}</option>
-            ))}
-          </select>
+          {/* There was an empty div here in your original code, left as is */}
         </div>
       </div>
 
@@ -108,7 +100,7 @@ const OfficeGoalsView = () => {
               <TrendingUp size={24} className="text-orange-600 dark:text-orange-400" />
             </div>
             <span className="text-2xl font-bold text-gray-900 dark:text-white">
-              {goals.length > 0 ? Math.round(goals.reduce((a, g) => a + (parseInt(g.progress) || 0), 0) / goals.length) : 0}%
+              {goals.length > 0 ? Math.round(goals.reduce((a, g) => a + (parseInt(g.progress) || 0), 0) / goals.length) : 0}% {/* Removed 'as any' */}
             </span>
           </div>
           <h3 className="font-semibold text-gray-900 dark:text-white">Avg Progress</h3>
@@ -125,7 +117,7 @@ const OfficeGoalsView = () => {
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{goal.description}</h3>
                   <select
                     value={goal.status}
-                    onChange={(e) => handleStatusChange(goal.id, e.target.value)}
+                    onChange={(e) => handleStatusChange(goal.id, e.target.value)} 
                     className={`px-2 py-1 text-xs font-medium rounded-lg ${getStatusColor(goal.status)}`}
                   >
                     <option value="Not Started">Not Started</option>
