@@ -10,7 +10,7 @@ import {Plus,Search,User,MessagesSquare,CheckCircle,Clock,TrendingUp,MessageCirc
 const CreateTopicForm = ({ onTopicCreated, isOpen, onToggle }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [author, setAuthor] = useState('Student123');
+  const [author, setAuthor] = useState('AuthorName');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -196,6 +196,9 @@ const ForumView = () => {
     };
     loadData();
   }, [loadTopics]);
+
+  console.log("ForumView - Current 'forums' state:", forums);
+  console.log("ForumView - Current Topics State:", topics);
 
   const handleTopicCreated = (newTopic) => {
     setTopics(prev => [newTopic, ...prev]);
