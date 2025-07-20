@@ -19,7 +19,7 @@ const AnnouncementsView = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setAnnouncements(announcementsJson.announcements);
+      setAnnouncements(announcementsJson.Announcements);
       setIsLoading(false);
     }, 400);
   }, []);
