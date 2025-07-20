@@ -3,7 +3,7 @@ import { forumService } from '../services/forumService';
 import Card from './Card';
 import Spinner from './Spinner';
 import TopicDetailView from './TopicDetailView';
-import {Plus,Search,User,MessagesSquare,CheckCircle,XCircle,Clock,TrendingUp,MessageCircle,Eye,ChevronRight
+import {Plus,Search,User,MessagesSquare,CheckCircle,Clock,TrendingUp,MessageCircle,Eye,ChevronRight
 } from 'lucide-react';
 
 
@@ -184,7 +184,7 @@ const ForumView = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const response = await fetch('../data/Forums.json');
+        const response = await fetch('/data/Forums.json');
         const data = await response.json();
         setForums(data);
         loadTopics();
