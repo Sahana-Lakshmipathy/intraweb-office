@@ -157,10 +157,7 @@ const FreelanceView = () => {
     return filtered.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
   }, [gigs, activeTab]);
 
-  // Debug information (remove in production)
-  console.log('Current gigs:', gigs);
-  console.log('Active tab:', activeTab);
-  console.log('Filtered gigs:', filteredGigs);
+
 
   const handleTabChange = (newTab) => {
     setActiveTab(newTab);

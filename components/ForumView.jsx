@@ -196,8 +196,7 @@ const ForumView = () => {
     loadData();
   }, [loadTopics]);
 
-  console.log("ForumView - Current 'forums' state:", forums);
-  console.log("ForumView - Current Topics State:", topics);
+
 
   const handleTopicCreated = (newTopic) => {
     setTopics(prev => [newTopic, ...prev]);

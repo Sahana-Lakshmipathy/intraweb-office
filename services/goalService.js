@@ -4,7 +4,6 @@ const getGoals = () => {
   try {
     const goalsJSON = localStorage.getItem(GOALS_KEY);
     const goals = goalsJSON ? JSON.parse(goalsJSON) : [];
-    console.log("goalService - getGoals: Retrieved from localStorage:", goals);
     return goals;
   } catch (error) {
     console.error("goalService - Error reading goals from localStorage", error);
@@ -16,7 +15,6 @@ const getGoals = () => {
 const saveGoals = (goals) => {
   try {
     localStorage.setItem(GOALS_KEY, JSON.stringify(goals));
-    console.log("goalService - saveGoals: Saved to localStorage:", goals);
   } catch (error) {
     console.error("goalService - Error saving goals to localStorage", error);
   }
@@ -27,7 +25,6 @@ export const goalService = {
   getGoalsByCoe: (coeName) => {
     const allGoals = getGoals();
     const filtered = allGoals.filter(goal => goal.coeName === coeName);
-    console.log(`goalService - getGoalsByCoe(${coeName}):`, filtered);
     return filtered;
   },
 
@@ -43,7 +40,6 @@ export const goalService = {
     };
     const updatedGoals = [...goals, newGoal]; 
     saveGoals(updatedGoals);
-    console.log("goalService - addGoal: New goal added and saved:", newGoal);
     return newGoal;
   },
 
@@ -73,7 +69,6 @@ export const goalService = {
     ];
 
     saveGoals(updatedGoals); 
-    console.log("goalService - updateGoalStatus: Goal updated and saved:", updatedGoal);
     return updatedGoal;
   },
 
@@ -84,7 +79,6 @@ export const goalService = {
 
     if (updatedGoals.length < initialLength) {
       saveGoals(updatedGoals);
-      console.log(`goalService - deleteGoal: Goal ${goalId} deleted.`);
       return true;
     }
     console.warn(`goalService - deleteGoal: Goal ${goalId} not found for deletion.`);

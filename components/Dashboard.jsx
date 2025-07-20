@@ -8,7 +8,7 @@ import { marketService } from '../services/marketService';
 import WeeklyPoll from './WeeklyPoll';
 import Spinner from './Spinner';
 import { Calendar, Users, Briefcase, TrendingUp, MessageSquare, User, ChevronDown, ArrowRight, Sparkles, Clock, MapPin, Target } from 'lucide-react';
-console.log('marketService loaded:', marketService);
+
 
 const useScrollAnimation = () => {
   const observer = useRef(null);
@@ -70,7 +70,6 @@ const StockChart = () => {
     const fetchData = async () => {
       try {
         const { indexFundData } = await marketService.getMarketData();
-        console.log('Fetched data:', indexFundData);
         setData(indexFundData);
       } catch (error) {
         console.error('Error fetching market data:', error);
