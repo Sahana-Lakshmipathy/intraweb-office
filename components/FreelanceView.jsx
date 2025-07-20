@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { gigService } from '../services/gigService';
-import gigsData from '../data/gigs.json';
+import gigsData from '../data/Gigs.json';
 import Card from './Card';
 import Spinner from './Spinner';
 
