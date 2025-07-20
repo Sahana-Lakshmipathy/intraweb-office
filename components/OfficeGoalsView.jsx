@@ -1,16 +1,16 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Award, Target, TrendingUp, CheckCircle } from 'lucide-react';
-import { STATIC_CLUBS } from '../constants'; // Ensure this path is correct
-import { goalService } from '../services/goalService'; // Ensure this path is correct
-// Removed: import { type Goal, type GoalStatus } from '../types'; // Type imports are not needed in JSX
+import { STATIC_CLUBS } from '../constants'; 
+import { goalService } from '../services/goalService'; 
+
 
 const uniqueCategories = [...new Set(STATIC_CLUBS.map(club => club.category))];
 
 
-const OfficeGoalsView = () => { // Removed : React.FC
+const OfficeGoalsView = () => { 
   const coeList = useMemo(() => STATIC_CLUBS.filter(c => c.category === 'Technology'), []);
-  const [selectedCoe, setSelectedCoe] = useState(coeList[0]?.name || ''); // Removed <string>
-  const [goals, setGoals] = useState([]); // Removed <Goal[]>
+  const [selectedCoe, setSelectedCoe] = useState(coeList[0]?.name || ''); 
+  const [goals, setGoals] = useState([]);
   const [newGoalDescription, setNewGoalDescription] = useState('');
   const currentMonth = new Date().toLocaleString('default', { month: 'long', year: 'numeric' });
 
@@ -20,7 +20,7 @@ const OfficeGoalsView = () => { // Removed : React.FC
     }
   }, [selectedCoe]);
 
-  const handleAddGoal = (e) => { // Removed : React.FormEvent
+  const handleAddGoal = (e) => { 
     e.preventDefault();
     if (!newGoalDescription.trim() || !selectedCoe) return;
     goalService.addGoal({ coeName: selectedCoe, description: newGoalDescription, month: currentMonth });
@@ -28,12 +28,12 @@ const OfficeGoalsView = () => { // Removed : React.FC
     setNewGoalDescription('');
   };
 
-  const handleStatusChange = (goalId, status) => { // Removed : string, : GoalStatus
+  const handleStatusChange = (goalId, status) => { 
     goalService.updateGoalStatus(goalId, status);
     setGoals(goalService.getGoalsByCoe(selectedCoe));
   };
 
-  const getStatusColor = (status) => { // Removed : string
+  const getStatusColor = (status) => {
     switch (status) {
       case 'Completed':
       case 'completed': return 'text-green-600 bg-green-100 dark:bg-green-900/30';
