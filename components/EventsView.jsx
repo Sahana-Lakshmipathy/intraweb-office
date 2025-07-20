@@ -6,6 +6,7 @@ import Modal from './Modal';
 
 
 
+
 const formatDateTime = (iso) => {
   const date = new Date(iso);
   return {
@@ -77,7 +78,7 @@ const EventsView = () => {
             >
               <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600 relative overflow-hidden">
                 <img
-                  src={event.image}
+                  src={`../assets/${event.image}`}
                   alt={event.title}
                   className="w-full h-full object-cover mix-blend-overlay"
                 />
