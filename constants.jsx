@@ -1,10 +1,10 @@
-import Alex from './assets/Alex.jpg';
-import Maria from './assets/Maria.jpg';    
-import Christine from './assets/Christine.jpg';
-import Tim from './assets/Tim.jpg';
-import Sam from './assets/Sam.jpg';
-import Evelyn from './assets/Evelyn.jpg';
-import Ben from './assets/Ben.jpg';
+import Alex from './public/assets/Alex.jpg';
+import Maria from './public/assets/Maria.jpg';    
+import Christine from './public/assets/Christine.jpg';
+import Tim from './public/assets/Tim.jpg';
+import Sam from './public/assets/Sam.jpg';
+import Evelyn from './public/assets/Evelyn.jpg';
+import Ben from './public/assets/Ben.jpg';
 
 
 export const ICONS = {

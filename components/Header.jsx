@@ -1,6 +1,6 @@
 import React from 'react';
 import { ICONS } from '../constants';
-import mikasa from '../assets/mikasa.jpg'; 
+import mikasa from '../public/assets/mikasa.jpg'; 
 
 const Header = ({ toggleSidebar }) => {
   return (
