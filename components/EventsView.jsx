@@ -3,6 +3,7 @@ import { Calendar, Clock, MapPin, Users, Filter, Search } from 'lucide-react';
 import eventJson from '../data/Events.json';
 import Spinner from './Spinner';
 import Modal from './Modal';
+import AI from '../assets/AI.jpg'
 
 
 const formatDateTime = (iso) => {
