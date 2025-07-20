@@ -115,7 +115,7 @@ const FreelanceView = () => {
 
         // Seed with static data if no gigs exist
         if (existingGigs.length === 0) {
-          const staticGigs = gigsData.gigs;
+          const staticGigs = gigsData.Gigs;
           staticGigs.forEach(gigData => {
             gigService.addGig({
               title: gigData.title,
