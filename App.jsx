@@ -13,6 +13,7 @@ import FreelanceView from './components/FreelanceView';
 import DirectoryView from './components/DirectoryView';
 import PollHistoryView from './components/PollHistoryView';
 import StockMarketView from './components/StockMarketView';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 const App = () => {
   const [currentView, setCurrentView] = useState('dashboard');
@@ -49,6 +50,7 @@ const App = () => {
 
   return (
     <div className="flex h-screen bg-transparent text-gray-800 dark:text-gray-200">
+      <SpeedInsights />
       <Sidebar
         currentView={currentView}
         setCurrentView={setCurrentView}
