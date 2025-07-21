@@ -85,7 +85,8 @@ Yep when I said it's an AI assistant, it is an assistant that you can interact w
 
 <img width="1178" height="927" alt="image" src="https://github.com/user-attachments/assets/812e2f10-d727-4a36-9bd1-17eb70478a70" />
 
-But we are sorry to say that our admin is away an a vaction. ¯\\_(ツ)_/¯ (I didn't add functionality for the events and announcemnts. That's the role of an admin not an end user.) 
+But we are sorry to say that our admin is away an a vaction. ¯\\_(ツ)_/¯ 
+(I didn't add functionality for the events and announcemnts. That's the role of an admin not an end user.) 
 
 
 
