@@ -1,49 +1,80 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Award, Target, TrendingUp, CheckCircle } from 'lucide-react';
-import { STATIC_CLUBS } from '../constants'; 
-import { goalService } from '../services/goalService'; 
-
+import { STATIC_CLUBS } from '../constants';
+import { goalService } from '../services/goalService';
 
 const uniqueCategories = [...new Set(STATIC_CLUBS.map(club => club.category))];
 
-
-const OfficeGoalsView = () => { 
+const OfficeGoalsView = () => {
   const coeList = useMemo(() => STATIC_CLUBS.filter(c => c.category === 'Technology'), []);
-  const [selectedCoe, setSelectedCoe] = useState(coeList[0]?.name || ''); 
+  const [selectedCoe, setSelectedCoe] = useState(coeList[0]?.name || '');
   const [goals, setGoals] = useState([]);
   const [newGoalDescription, setNewGoalDescription] = useState('');
   const currentMonth = new Date().toLocaleString('default', { month: 'long', year: 'numeric' });
 
+  // Load goals for the selected CoE
   useEffect(() => {
     if (selectedCoe) {
       setGoals(goalService.getGoalsByCoe(selectedCoe));
     }
   }, [selectedCoe]);
 
-  const handleAddGoal = (e) => { 
+  const handleAddGoal = (e) => {
     e.preventDefault();
     if (!newGoalDescription.trim() || !selectedCoe) return;
-    goalService.addGoal({ coeName: selectedCoe, description: newGoalDescription, month: currentMonth });
+
+    // When adding, default status is 'Not Started' and progress is 0
+    goalService.addGoal({
+      coeName: selectedCoe,
+      description: newGoalDescription,
+      month: currentMonth,
+      status: 'Not Started', // Set initial status
+      progress: 0,           // Set initial progress
+    });
     setGoals(goalService.getGoalsByCoe(selectedCoe));
     setNewGoalDescription('');
   };
 
-  const handleStatusChange = (goalId, status) => { 
-    goalService.updateGoalStatus(goalId, status);
-    setGoals(goalService.getGoalsByCoe(selectedCoe));
+  // This function will now toggle the status between 'Completed' and 'Not Started'
+  const handleToggleComplete = (goalId) => {
+    const goalToUpdate = goals.find(g => g.id === goalId);
+    if (!goalToUpdate) return;
+
+    // Determine the new status and progress based on the current status
+    let newStatus;
+    let newProgress;
+
+    if (goalToUpdate.status === 'Completed') {
+      newStatus = 'Not Started';
+      newProgress = 0;
+    } else {
+      newStatus = 'Completed';
+      newProgress = 100;
+    }
+
+    // Update the goal using the service
+    goalService.updateGoalStatus(goalId, newStatus, newProgress); // Assuming updateGoalStatus can take progress now
+    setGoals(goalService.getGoalsByCoe(selectedCoe)); // Re-fetch goals to update UI
   };
 
+
+  // Removed getStatusColor as we are using a checkbox,
+  // but keeping it if you want to use it for other UI elements in the future.
   const getStatusColor = (status) => {
     switch (status) {
-      case 'Completed':
-      case 'completed': return 'text-green-600 bg-green-100 dark:bg-green-900/30';
-      case 'In Progress':
-      case 'in-progress': return 'text-blue-600 bg-blue-100 dark:bg-blue-900/30';
-      case 'Near Completion':
-      case 'near-completion': return 'text-orange-600 bg-orange-100 dark:bg-orange-900/30';
+      case 'Completed': return 'text-green-600 bg-green-100 dark:bg-green-900/30';
+      case 'In Progress': return 'text-blue-600 bg-blue-100 dark:bg-blue-900/30';
+      case 'Near Completion': return 'text-orange-600 bg-orange-100 dark:bg-orange-900/30';
       default: return 'text-gray-600 bg-gray-100 dark:bg-gray-900/30';
     }
   };
+
+  // Calculate summary statistics
+  const totalGoals = goals.length;
+  const completedGoalsCount = goals.filter(g => g.status === 'Completed').length;
+  const avgProgress = totalGoals > 0
+    ? Math.round(goals.reduce((sum, g) => sum + (g.status === 'Completed' ? 100 : 0), 0) / totalGoals)
+    : 0;
 
   return (
     <div className="space-y-8">
@@ -53,10 +84,10 @@ const OfficeGoalsView = () => {
           <p className="text-gray-600 dark:text-gray-400">Track and manage strategic goals by various clubs</p>
         </div>
         <div className="w-full sm:w-auto">
-          <select 
-          value={selectedCoe} 
-          onChange={(e) => setSelectedCoe(e.target.value)}
-          className="w-full sm:w-auto px-4 py-2 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          <select
+            value={selectedCoe}
+            onChange={(e) => setSelectedCoe(e.target.value)}
+            className="w-full sm:w-auto px-4 py-2 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             {uniqueCategories.map(category => (
               <option key={category} value={category}>{category}</option>
@@ -82,13 +113,14 @@ const OfficeGoalsView = () => {
         </button>
       </form>
 
+      {/* Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50 dark:border-gray-700/50">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg">
               <Target size={24} className="text-blue-600 dark:text-blue-400" />
             </div>
-            <span className="text-2xl font-bold text-gray-900 dark:text-white">{goals.length}</span>
+            <span className="text-2xl font-bold text-gray-900 dark:text-white">{totalGoals}</span>
           </div>
           <h3 className="font-semibold text-gray-900 dark:text-white">Total Goals</h3>
           <p className="text-sm text-gray-600 dark:text-gray-400">For {selectedCoe}</p>
@@ -99,7 +131,7 @@ const OfficeGoalsView = () => {
             <div className="p-3 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-lg">
               <CheckCircle size={24} className="text-green-600 dark:text-green-400" />
             </div>
-            <span className="text-2xl font-bold text-gray-900 dark:text-white">{goals.filter(g => g.status === 'Completed').length}</span>
+            <span className="text-2xl font-bold text-gray-900 dark:text-white">{completedGoalsCount}</span>
           </div>
           <h3 className="font-semibold text-gray-900 dark:text-white">Completed</h3>
           <p className="text-sm text-gray-600 dark:text-gray-400">This Month</p>
@@ -111,7 +143,7 @@ const OfficeGoalsView = () => {
               <TrendingUp size={24} className="text-orange-600 dark:text-orange-400" />
             </div>
             <span className="text-2xl font-bold text-gray-900 dark:text-white">
-              {goals.length > 0 ? Math.round(goals.reduce((a, g) => a + (parseInt(g.progress) || 0), 0) / goals.length) : 0}% {/* Removed 'as any' */}
+              {avgProgress}%
             </span>
           </div>
           <h3 className="font-semibold text-gray-900 dark:text-white">Avg Progress</h3>
@@ -119,6 +151,7 @@ const OfficeGoalsView = () => {
         </div>
       </div>
 
+      {/* Goals List */}
       <div className="space-y-6">
         {goals.length > 0 ? goals.map((goal, index) => (
           <div key={goal.id} className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300 animate-pop-in" style={{ animationDelay: `${index * 75}ms` }}>
@@ -126,22 +159,29 @@ const OfficeGoalsView = () => {
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2">
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{goal.description}</h3>
-                  <select
-                    value={goal.status}
-                    onChange={(e) => handleStatusChange(goal.id, e.target.value)}
-                    className={`px-2 py-1 text-xs font-medium rounded-lg ${getStatusColor(goal.status)}`}
-                  >
-                    <option value="Not Started">Not Started</option>
-                    <option value="In Progress">In Progress</option>
-                    <option value="Completed">Completed</option>
-                  </select>
+                  {/* Replaced select with a checkbox for toggle functionality */}
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={goal.status === 'Completed'}
+                      onChange={() => handleToggleComplete(goal.id)}
+                      className="form-checkbox h-5 w-5 text-purple-600 rounded focus:ring-purple-500" // Tailwind form-checkbox styling
+                    />
+                    <span className={`text-sm font-medium ${goal.status === 'Completed' ? 'text-green-600' : 'text-gray-500'}`}>
+                      {goal.status === 'Completed' ? 'Completed' : 'Not Started'}
+                    </span>
+                  </label>
                 </div>
                 <p className="text-sm text-gray-500 dark:text-gray-400">Month: {goal.month}</p>
               </div>
               <Award size={20} className="text-yellow-500" />
             </div>
+            {/* Progress Bar - now directly reflects Completed (100%) or Not Started (0%) */}
             <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-              <div className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-300" style={{ width: `${goal.progress || 0}%` }}></div>
+              <div
+                className={`h-2 rounded-full transition-all duration-300 ${goal.status === 'Completed' ? 'bg-green-500' : 'bg-gradient-to-r from-blue-500 to-purple-600'}`}
+                style={{ width: `${goal.status === 'Completed' ? 100 : 0}%` }}
+              ></div>
             </div>
           </div>
         )) : (
