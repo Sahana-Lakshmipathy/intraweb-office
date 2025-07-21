@@ -16,13 +16,13 @@
       "content": "We are excited to announce the installation of a new, state-of-the-art coffee machine in the main kitchenette on the 3rd floor. Enjoy a wider selection of beverages! Please remember to keep the area tidy.",
       "id": "announcement-2",
       "priority": "medium",
-      "pinned": false
+      "pinned": true
     },
     {
-      "title": "Congratulations to Our Employee of the Month: Sarah Chen!",
+      "title": "Congratulations to Our Employee of the Month: Hanah Wong!",
       "postedBy": "Human Resources",
       "datePosted": "2024-07-08",
-      "content": "We are thrilled to announce Sarah Chen from the Product Development team as our Employee of the Month for July. Sarah's dedication and outstanding contributions to the \"Phoenix\" project have been truly exceptional. Join us in congratulating her!",
+      "content": "We are thrilled to announce Hanah Wong from the Product Development team as our Employee of the Month for July. Hanah's dedication and outstanding contributions to the \"Phoenix\" project have been truly exceptional. Join us in congratulating her!",
       "id": "announcement-3",
       "priority": "low",
       "pinned": false
@@ -70,7 +70,7 @@
       "content": "We are excited to announce the official kick-off of \"Project Evergreen,\" our new sustainability initiative aimed at reducing our carbon footprint. An introductory meeting for all interested employees will be held on July 25th in Conference Room 303.",
       "id": "announcement-8",
       "priority": "medium",
-      "pinned": true
+      "pinned": false
     }
   ]
 }

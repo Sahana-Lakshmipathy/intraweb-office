@@ -26,11 +26,11 @@ const getSeedData = () => [
   },
   {
     id: 'poll-3',
-    question: 'Which new facility would you like to see on front office campus?',
+    question: 'Which new facility would you like to see on our office campus?',
     isActive: false,
     options: [
-      { id: 'opt-3-1', text: 'Outdoor basketball court', votes: 210 },
-      { id: 'opt-3-2', text: 'A dedicated music and arts room', votes: 180 },
+      { id: 'opt-3-1', text: 'A pool room', votes: 210 },
+      { id: 'opt-3-2', text: 'A recreation room', votes: 180 },
       { id: 'opt-3-3', text: 'A quiet and peaceful garden', votes: 250 },
       { id: 'opt-3-4', text: 'An on-campus coffee shop', votes: 350 },
     ]
