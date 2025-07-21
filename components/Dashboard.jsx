@@ -7,7 +7,7 @@ import { gigService } from '../services/gigService';
 import { marketService } from '../services/marketService';
 import WeeklyPoll from './WeeklyPoll';
 import Spinner from './Spinner';
-import { Calendar, Users, Briefcase, TrendingUp, MessageSquare, User, ChevronDown, ArrowRight, Sparkles, Clock, MapPin, Target } from 'lucide-react';
+import { Calendar, Users, Briefcase, TrendingUp, MessageSquare, User, ChevronDown, ArrowRight, Sparkles, Star, Clock, MapPin, Target } from 'lucide-react';
 
 
 const useScrollAnimation = () => {
@@ -186,7 +186,7 @@ const Dashboard = ({ setCurrentView }) => {
       <section className="min-h-screen flex flex-col justify-center items-center text-center p-4 relative overflow-hidden" id="welcome">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-gray-900 to-purple-900" />
         <div className="relative z-10 max-w-4xl mx-auto">
-          <div className="mb-8"><Sparkles size={48} className="mx-auto mb-4 text-yellow-400 animate-pulse" /></div>
+          <div className="mb-8"><Star size={48} className="mx-auto mb-4 text-yellow-400 animate-pulse" /></div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent animate-fade-in-up">Welcome to Colleague Connect</h1>
           <p className="text-lg md:text-2xl mb-8 text-gray-300 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.3s' }}>Your journey through our dynamic workplace begins here—explore opportunities, build meaningful connections, and shape your professional path.</p>
           <div className="animate-fade-in-up" style={{ animationDelay: '0.6s' }}><p className="text-blue-300 mb-4">Scroll to begin your journey</p><a href="#spotlight" className="inline-block animate-bounce"><ChevronDown size={32} /></a></div>
