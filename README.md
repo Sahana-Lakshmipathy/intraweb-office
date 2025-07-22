@@ -88,6 +88,25 @@ Yep when I said it's an AI assistant, it is an assistant that you can interact w
 But we are sorry to say that our admin is away an a vaction. ¯\\_(ツ)_/¯ 
 (I didn't add functionality for the events and announcemnts. That's the role of an admin not an end user.) 
 
+# License
+This project is licensed under the Apache License 2.0.
+
+# Project Setup
+
+### 1. **Clone the Repository**
+
+```bash
+git clone https://github.com/Sahana-Lakshmipathy/intraweb-office.git
+cd intraweb-office
+```
+### 2. **Install npm**
+
+```bash
+npm install
+npm run dev
+```
+
+
 
 
 
